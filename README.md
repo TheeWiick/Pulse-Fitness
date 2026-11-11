@@ -6,7 +6,7 @@
 
 Landing page moderna, minimalista y de alto impacto visual en Dark Mode para un gimnasio urbano en Alicante. Diseñada con una experiencia estética premium, calculadora de calorías interactiva y flujos de reserva.
 
-[🌐 Visitar Web en vivo](https://theewiick.github.io/Pulse-Fitness/)
+[🌐 Visitar Web](https://theewiick.github.io/Pulse-Fitness/)
 
 </div>
 
@@ -18,7 +18,7 @@ Landing page moderna, minimalista y de alto impacto visual en Dark Mode para un 
 * **Calculadora de Calorías Interactiva:** Herramienta basada en la fórmula Mifflin-St Jeor que calcula la Tasa Metabólica Basal (TMB), el gasto calórico de mantenimiento y un desglose dinámico de macronutrientes según los objetivos del usuario.
 * **Sistema de Precios Dinámico:** Tarjetas de tarifas (Básico, Pro y Elite) con un interruptor (*toggle*) interactivo para alternar entre facturación mensual y anual (con cálculo automático de descuentos).
 * **Navegación Multipágina & Enrutamiento:** Implementación de vistas independientes para el formulario de reserva de la semana gratis (`/reserva`) y páginas legales de cumplimiento (`/condiciones`, `/privacidad`, `/cookies`) gestionadas con React Router.
-* **Desarrollo Asistido por IA (AI-Workflow):** Proyecto estructurado bajo directrices de arquitectura guiada por IA (`AGENTS.md`), optimizando patrones de código limpio, tipado estricto y componentes modulares.
+* **Desarrollo Asistido por IA (AI-Workflow):** Proyecto desarrollado mediante flujos de ingeniería guiada por IA para optimizar patrones de código limpio, tipado estricto y componentes modulares en tiempo récord.
 
 ---
 
@@ -30,6 +30,15 @@ Landing page moderna, minimalista y de alto impacto visual en Dark Mode para un 
 * **React Router:** Enrutamiento del lado del cliente para una navegación fluida entre secciones y páginas legales.
 * **Vite:** Entorno de desarrollo rápido y empaquetador para producción.
 * **Lucide React:** Iconografía vectorial moderna y limpia.
+
+---
+
+## 🤖 Metodología de Desarrollo (AI-Workflow)
+
+Este proyecto ha sido desarrollado bajo un enfoque de **arquitectura de software asistida por IA**:
+* **Entorno de trabajo:** OpenCode
+* **Modelo utilizado:** DeepSeek V4.1 Flash
+* **Enfoque técnico:** El rol principal se ha centrado en la dirección de arquitectura, la definición de restricciones estrictas de diseño (`AGENTS.md`) y la supervisión del código generado para asegurar una implementación funcional, limpia y sin errores de compilación.
 
 ---
 
