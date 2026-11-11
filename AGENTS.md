@@ -5,12 +5,10 @@ Landing page moderna, minimalista y de alto impacto visual en Dark Mode para un 
 ## Stack y estructura
 
 - **Tecnologías clave:** React 18+, TypeScript 5+, Vite 6, Tailwind CSS v3+, Lucide React, React Router (HashRouter).
-- **Despliegue:** GitHub Pages mediante GitHub Actions (`.github/workflows/deploy.yml`). El proyecto se publica en `https://theewiick.github.io/Pulse-Fitness/`, por lo que `base` debe ser `/Pulse-Fitness/`.
+- **Despliegue:** rama `gh-pages` mediante `npm run deploy` (paquete `gh-pages`). El proyecto se publica en `https://theewiick.github.io/Pulse-Fitness/`, por lo que `base` debe ser `/Pulse-Fitness/`.
 - **Organización de archivos:**
   ```text
   pulse-fitness-react/
-  ├── .github/workflows/
-  │   └── deploy.yml           # Build y despliegue automático a GitHub Pages
   ├── src/
   │   ├── components/          # Componentes visuales e interactivos
   │   │   ├── Navbar.tsx       # Navegación y menú responsive
@@ -56,8 +54,14 @@ Los enlaces internos usan `Link` de `react-router-dom`. Los anchors de la landin
 
 ## Despliegue
 
-1. Haz push a `main`. El workflow instala dependencias con `npm ci`, ejecuta `npm run build` y publica `dist` en GitHub Pages.
-2. En el repositorio: **Settings → Pages → Source → GitHub Actions** (solo la primera vez).
+El despliegue se realiza en la rama `gh-pages` (sin depender de GitHub Actions).
+
+1. Ejecuta `npm run deploy`. Compila el proyecto y publica el contenido de `dist` en la rama `gh-pages`.
+2. En el repositorio, la primera vez: **Settings → Pages → Source → Deploy from a branch → `gh-pages` / (root)**.
 3. La web queda en `https://theewiick.github.io/Pulse-Fitness/`.
+
+Cada vez que quieras publicar cambios, vuelve a ejecutar `npm run deploy`.
+
+> GitHub Actions está deshabilitado en esta cuenta por un problema de facturación, por eso no se usa un workflow de CI. Si se resuelve, se puede añadir `.github/workflows/deploy.yml` y cambiar la fuente de Pages a «GitHub Actions».
 
 Si el repositorio o el dominio cambian, actualiza `base` en `vite.config.ts` para que coincida con la ruta pública.
