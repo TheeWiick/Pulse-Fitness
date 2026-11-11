@@ -7,10 +7,10 @@ interface LegalPageProps {
   document: LegalDocument
 }
 
-export default function LegalPage({ document }: LegalPageProps) {
+export default function LegalPage({ document: doc }: LegalPageProps) {
   useEffect(() => {
-    document.title = `${document.title} · Pulse Fitness Studio`
-  }, [document])
+    document.title = `${doc.title} · Pulse Fitness Studio`
+  }, [doc])
 
   return (
     <div className="relative overflow-hidden pb-24 pt-32 sm:pt-36">
@@ -34,14 +34,12 @@ export default function LegalPage({ document }: LegalPageProps) {
             Legal
           </span>
           <h1 className="mt-5 text-balance font-display text-4xl font-extrabold tracking-tight text-white sm:text-5xl">
-            {document.title}
+            {doc.title}
           </h1>
-          <p className="mt-4 text-balance text-base leading-relaxed text-zinc-400">
-            {document.intro}
-          </p>
+          <p className="mt-4 text-balance text-base leading-relaxed text-zinc-400">{doc.intro}</p>
           <p className="mt-5 inline-flex items-center gap-2 text-xs text-zinc-500">
             <CalendarDays className="h-3.5 w-3.5" />
-            Última actualización: {document.updatedAt}
+            Última actualización: {doc.updatedAt}
           </p>
         </header>
 
@@ -52,14 +50,19 @@ export default function LegalPage({ document }: LegalPageProps) {
                 En esta página
               </p>
               <ul className="mt-4 space-y-2 border-l border-white/10 pl-4 text-sm">
-                {document.sections.map((section) => (
+                {doc.sections.map((section) => (
                   <li key={section.id}>
-                    <a
-                      href={`#${section.id}`}
-                      className="block text-zinc-500 transition hover:text-volt"
+                    <button
+                      type="button"
+                      onClick={() => {
+                        window.document
+                          .getElementById(section.id)
+                          ?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+                      }}
+                      className="block text-left text-zinc-500 transition hover:text-volt"
                     >
                       {section.title}
-                    </a>
+                    </button>
                   </li>
                 ))}
               </ul>
@@ -67,7 +70,7 @@ export default function LegalPage({ document }: LegalPageProps) {
           </aside>
 
           <article className="max-w-3xl space-y-10">
-            {document.sections.map((section) => (
+            {doc.sections.map((section) => (
               <section key={section.id} id={section.id} className="scroll-mt-28">
                 <h2 className="font-display text-xl font-bold text-white sm:text-2xl">
                   {section.title}
